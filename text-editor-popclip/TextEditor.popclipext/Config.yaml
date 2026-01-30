@@ -1,0 +1,9 @@
+# PopClip 多行文本编辑器
+name: Text Editor
+icon: square pencil
+popclipVersion: 4151
+
+actions:
+  - title: Edit Text
+    icon: square pencil
+    shell script file: run.sh
