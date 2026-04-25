@@ -10,6 +10,7 @@ This is a personal collection of efficiency tools, including Userscripts and Pop
 | :--- | :--- | :--- |
 | **[X Speed Reader](./x-speed-reader)** | Userscript | 🚀 **X (Twitter) 阅读加速**<br>长文折叠、去除冗余卡片、翻译兼容模式。<br>Fold long texts, remove redundant cards, translation compatible. |
 | **[X Inoreader Style](./x-twitter-inoreader-style)** | Userscript | 📰 **X (Twitter) RSS 风格**<br>让时间流像 Inoreader 一样清爽，支持 Soft Step Seek。<br>Makes timeline look like Inoreader, supports Soft Step Seek. |
+| **[Twitter Follower Count Compact](./twitter-follower-count)** | Userscript | 👤 **X/Twitter 粉丝量展示**<br>在头像上方显示更紧凑的粉丝数徽标。<br>Shows compact follower-count badges above avatars. |
 | **[TextEditor](./text-editor-popclip)** | PopClip | 📝 **TextEditor Extension**<br>在 PopClip 中快速调用文本编辑器打开选中内容。<br>Quickly open selected text in your favorite editor via PopClip. |
 
 ## 📦 安装 / Installation
