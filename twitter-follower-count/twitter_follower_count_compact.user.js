@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Follower Count Compact
 // @namespace    amm1rr.com.twitter.follower.count.compact
-// @version      0.5.5
+// @version      0.5.6
 // @homepage     https://github.com/Amm1rr/Twitter-Follower-Count/
 // @description  Display compact follower counts on X/Twitter avatars
 // @author       Mohammad Khani (@m_khani65), compact tweaks by Qingqi
@@ -15,7 +15,7 @@
 (function () {
   "use strict";
 
-  const SCRIPT_VERSION = "0.5.5";
+  const SCRIPT_VERSION = "0.5.6";
   const STYLE_ID = "tfc-compact-style";
   const AVATAR_CLASS = "tfc-avatar";
   const RING_CLASS = "tfc-ring";
@@ -41,56 +41,56 @@
   const userCache = new Map();
   const TIER_STYLES = {
     gray: {
-      ring: "rgba(83, 100, 113, 0.5)",
-      glow: "rgba(83, 100, 113, 0.16)",
+      ring: "rgba(83, 100, 113, 0.28)",
+      glow: "rgba(83, 100, 113, 0.06)",
       badgeBg: "rgba(83, 100, 113, 0.92)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     green: {
-      ring: "rgba(0, 186, 124, 0.72)",
-      glow: "rgba(0, 186, 124, 0.2)",
+      ring: "rgba(0, 186, 124, 0.32)",
+      glow: "rgba(0, 186, 124, 0.07)",
       badgeBg: "rgba(0, 186, 124, 0.94)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     blue: {
-      ring: "rgba(29, 155, 240, 0.74)",
-      glow: "rgba(29, 155, 240, 0.22)",
+      ring: "rgba(29, 155, 240, 0.34)",
+      glow: "rgba(29, 155, 240, 0.08)",
       badgeBg: "rgba(29, 155, 240, 0.94)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     purple: {
-      ring: "rgba(120, 86, 255, 0.76)",
-      glow: "rgba(120, 86, 255, 0.24)",
+      ring: "rgba(120, 86, 255, 0.36)",
+      glow: "rgba(120, 86, 255, 0.09)",
       badgeBg: "rgba(120, 86, 255, 0.94)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     orange: {
-      ring: "rgba(255, 122, 0, 0.82)",
-      glow: "rgba(255, 122, 0, 0.26)",
+      ring: "rgba(255, 122, 0, 0.38)",
+      glow: "rgba(255, 122, 0, 0.1)",
       badgeBg: "rgba(255, 122, 0, 0.94)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     red: {
-      ring: "rgba(244, 33, 46, 0.84)",
-      glow: "rgba(244, 33, 46, 0.28)",
+      ring: "rgba(244, 33, 46, 0.4)",
+      glow: "rgba(244, 33, 46, 0.1)",
       badgeBg: "rgba(244, 33, 46, 0.94)",
       badgeBorder: "rgba(255, 255, 255, 0.9)",
       badgeFg: "#fff",
       badgeTextShadow: "0 1px 1px rgba(15, 20, 25, 0.18)",
     },
     blackgold: {
-      ring: "rgba(15, 20, 25, 0.92)",
-      glow: "rgba(255, 212, 89, 0.34)",
+      ring: "rgba(15, 20, 25, 0.48)",
+      glow: "rgba(255, 212, 89, 0.14)",
       badgeBg: "rgba(15, 20, 25, 0.94)",
       badgeBorder: "rgba(255, 212, 89, 0.92)",
       badgeFg: "rgb(255, 224, 128)",
@@ -258,14 +258,14 @@
         inset: -3px;
         z-index: 2;
         box-sizing: border-box;
-        border: 2px solid rgba(83, 100, 113, 0.5);
+        border: 2px solid rgba(83, 100, 113, 0.28);
         border-radius: var(--tfc-ring-radius, 9999px);
         opacity: 1 !important;
         visibility: visible !important;
         box-shadow:
-          inset 0 0 0 1px rgba(255, 255, 255, 0.92),
-          0 0 0 1px rgba(255, 255, 255, 0.86),
-          0 0 10px rgba(83, 100, 113, 0.16);
+          inset 0 0 0 1px rgba(255, 255, 255, 0.62),
+          0 0 0 1px rgba(255, 255, 255, 0.42),
+          0 0 10px rgba(83, 100, 113, 0.06);
         pointer-events: none;
         transition: none !important;
         animation: none !important;
@@ -496,7 +496,7 @@
     setImportantStyle(
       ring,
       "box-shadow",
-      `inset 0 0 0 1px rgba(255, 255, 255, 0.92), 0 0 0 1px rgba(255, 255, 255, 0.86), 0 0 10px ${style.glow}`
+      `inset 0 0 0 1px rgba(255, 255, 255, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.42), 0 0 10px ${style.glow}`
     );
     setImportantStyle(badge, "background", style.badgeBg);
     setImportantStyle(badge, "border-color", style.badgeBorder);
